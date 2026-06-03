@@ -1,1 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agronegócio Sustentável</title>
+    <style>
+        /* Estilos Gerais e Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            font-size: 2rem;
+            color: #2c5e3b;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        p {
+            margin-bottom: 15px;
+            color: #555;
+        }
 
+        /* Cores Temáticas */
+        .bg-white { background-color: #ffffff; }
+        .bg-light-green { background-color: #f0f7f4; }
+        .bg-alert { background-color: #fff5f5; border-left: 5px solid #e53e3e; }
+        
+        /* Layout em Grid/Cards */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid #2c5e3b;
+        }
+        .card.alert { border-top-color: #e53e3e; }
+
+        /* 1. Banner Principal (Hero) */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        /* Introdução */
+        .intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .intro p { font-size: 1.2rem; color: #444; }
+
+        /* Formulário e Rodapé */
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        form input, form textarea, form select {
+            margin-bottom: 15px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        form button, .interactive-box button {
+            background-color: #2c5e3b;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        form button:hover, .interactive-box button:hover { background-color: #1e4228; }
+
+        /* Recursos Interativos */
+        .interactive-box {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .result-text {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #2c5e3b;
+        }
+
+        /* Galeria Simples */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        /* Rodapé Final */
+        .final-footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>“Produzir hoje preservando o amanhã”</h1>
+    </header>
+    
+    <div class="intro">
+        <p>O agronegócio é um dos pilares mais importantes da economia global, responsável por movimentar bilhões de recursos e alimentar a população mundial. Contudo, o grande desafio atual reside na urgência de equilibrar a alta capacidade produtiva com a preservação rigorosa do meio ambiente, garantindo a sustentabilidade do nosso ecossistema.</p>
+    </div>
+
+    <section class="bg-light-green">
+        <h2>O Crescimento do Agronegócio</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">O setor avança constantemente na geração de empregos e no fortalecimento econômico, impulsionado pela ado
