@@ -1,0 +1,344 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E VARIÁVEIS
+   ========================================================================== */
+:root {
+    --cor-primaria: #2E7D32;       /* Verde sustentável/tecnológico */
+    --cor-secundaria: #1B5E20;     /* Verde escuro para destaques */
+    --cor-acento: #F57C00;         /* Laranja/Terra para alertas/detalhes */
+    --cor-fundo-claro: #F4F6F4;    /* Cinza claro com toque de verde */
+    --cor-fundo-escura: #212121;   /* Grafite para o rodapé */
+    --texto-escuro: #333333;       /* Cor principal do texto */
+    --texto-claro: #FFFFFF;        /* Texto sobre fundos escuros */
+    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --transicao: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    color: var(--texto-escuro);
+    line-height: 1.6;
+    background-color: #FFFFFF;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* Títulos Globais */
+h2 {
+    font-size: 2.5rem;
+    color: var(--cor-secundaria);
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--cor-acento);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   2. BANNER PRINCIPAL (HERO) & INTRODUÇÃO
+   ========================================================================== */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('caminho-da-sua-imagem-agricultura.jpg') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--texto-claro);
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    max-width: 800px;
+}
+
+.introducao {
+    background-color: var(--cor-fundo-claro);
+    text-align: center;
+}
+
+.introducao p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+}
+
+/* ==========================================================================
+   3. SEÇÃO: CRESCIMENTO DO AGRONEGÓCIO & TECNOLOGIA
+   ========================================================================== */
+.agronegocio-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card-tech {
+    background: #FFFFFF;
+    border-top: 5px solid var(--cor-primaria);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: var(--transicao);
+}
+
+.card-tech:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.card-tech h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   4. SEÇÃO: SUSTENTABILIDADE (PRÁTICAS ECOLÓGICAS)
+   ========================================================================== */
+.sustentabilidade {
+    background-color: var(--cor-fundo-claro);
+}
+
+.sustentabilidade-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.sustentabilidade-conteudo, .sustentabilidade-imagem {
+    flex: 1;
+    min-width: 300px;
+}
+
+.lista-praticas {
+    list-style: none;
+}
+
+.lista-praticas li {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.lista-praticas li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--cor-primaria);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   5. SEÇÃO: DESAFIOS AMBIENTAIS (ALERTA)
+   ========================================================================== */
+.desafios {
+    background-color: #FFF5F5; /* Tom levemente avermelhado para alerta */
+}
+
+.desafios h2 {
+    color: #C62828; /* Vermelho escuro para o título de desafios */
+}
+
+.desafios h2::after {
+    background-color: #C62828;
+}
+
+.desafios-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.alerta-box {
+    background: #FFFFFF;
+    border-left: 5px solid #C62828;
+    padding: 25px;
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   6. SEÇÃO: SOLUÇÕES E FUTURO
+   ========================================================================== */
+.futuro-destaque {
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    color: var(--texto-claro);
+    border-radius: 12px;
+    padding: 50px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.futuro-destaque h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   7. SEÇÃO: CONTATO, CONSCIENTIZAÇÃO & INTERATIVIDADE
+   ========================================================================== */
+.contato-interativo {
+    background-color: var(--cor-fundo-claro);
+}
+
+.interativo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* Formulário */
+.formulario-contato {
+    background: #FFFFFF;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.grupo-campo {
+    margin-bottom: 20px;
+}
+
+.grupo-campo label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.grupo-campo input, .grupo-campo textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    font-family: var(--fonte-principal);
+}
+
+.grupo-campo input:focus, .grupo-campo textarea:focus {
+    border-color: var(--cor-primaria);
+    outline: none;
+}
+
+/* Recursos Interativos (Quiz, Calculadora) */
+.recursos-interativos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.box-interativo {
+    background: #FFFFFF;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #E0E0E0;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: var(--texto-claro);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transicao);
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: var(--cor-secundaria);
+}
+
+.btn-alerta {
+    background-color: var(--cor-acento);
+}
+
+.btn-alerta:hover {
+    background-color: #E65100;
+}
+
+/* Galeria de Imagens */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.galeria img {
+    border-radius: 6px;
+    transition: var(--transicao);
+    cursor: pointer;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   8. RODAPÉ (FOOTER)
+   ========================================================================== */
+footer {
+    background-color: var(--cor-fundo-escura);
+    color: #B0BEC5;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   9. RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding: 40px 15px;
+    }
+    
+    .futuro-destaque {
+        padding: 30px 20px;
+    }
+}
