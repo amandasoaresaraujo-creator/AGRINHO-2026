@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Flashcards de Estudo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Flashcards de Estudo</h1>
+        <p>Clique no card para ver a resposta</p>
+    </header>
+
+    <main class="container">
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>Pergunta 1</h3>
+                    <p>Insira aqui a sua pergunta sobre a matéria...</p>
+                </div>
+                <div class="card-back">
+                    <h3>Resposta</h3>
+                    <p>Insira aqui a resposta detalhada do conceito.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>Pergunta 2</h3>
+                    <p>Outra pergunta importante para revisar?</p>
+                </div>
+                <div class="card-back">
+                    <h3>Resposta</h3>
+                    <p>A resposta certa para testar sua memória.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>Pergunta 3</h3>
+                    <p>Mais um conceito para fixar na mente.</p>
+                </div>
+                <div class="card-back">
+                    <h3>Resposta</h3>
+                    <p>Mais uma resposta para o seu estudo.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
