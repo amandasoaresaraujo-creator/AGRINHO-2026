@@ -1,17 +1,7 @@
 /* ==========================================================================
-   1. CONFIGURAÇÕES GERAIS E VARIÁVEIS
+   1. CONFIGURAÇÕES GERAIS E TIPOGRAFIA
    ========================================================================== */
-:root {
-    --cor-primaria: #2E7D32;       /* Verde sustentável/tecnológico */
-    --cor-secundaria: #1B5E20;     /* Verde escuro para destaques */
-    --cor-acento: #F57C00;         /* Laranja/Terra para alertas/detalhes */
-    --cor-fundo-claro: #F4F6F4;    /* Cinza claro com toque de verde */
-    --cor-fundo-escura: #212121;   /* Grafite para o rodapé */
-    --texto-escuro: #333333;       /* Cor principal do texto */
-    --texto-claro: #FFFFFF;        /* Texto sobre fundos escuros */
-    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --transicao: all 0.3s ease;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
 
 * {
     margin: 0;
@@ -19,326 +9,426 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: var(--fonte-principal);
-    color: var(--texto-escuro);
+    font-family: 'Open Sans', sans-serif;
+    background-color: #FAF8F5; /* Off-white de fundo */
+    color: #2C3E2F; /* Verde escuro quase preto para excelente legibilidade */
     line-height: 1.6;
-    background-color: #FFFFFF;
 }
 
-img {
-    max-width: 100%;
-    display: block;
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 20px;
+/* Customização da barra de rolagem */
+::-webkit-scrollbar {
+    width: 10px;
 }
-
-/* Títulos Globais */
-h2 {
-    font-size: 2.5rem;
-    color: var(--cor-secundaria);
-    text-align: center;
-    margin-bottom: 20px;
-    position: relative;
+::-webkit-scrollbar-track {
+    background: #FAF8F5;
 }
-
-h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: var(--cor-acento);
-    margin: 10px auto 0;
-    border-radius: 2px;
+::-webkit-scrollbar-thumb {
+    background: #4A5D4E; /* Verde-musgo */
+    border-radius: 5px;
 }
 
 /* ==========================================================================
-   2. BANNER PRINCIPAL (HERO) & INTRODUÇÃO
+   2. CABEÇALHO E NAVEGAÇÃO
    ========================================================================== */
-.hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('caminho-da-sua-imagem-agricultura.jpg') no-repeat center center/cover;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+header {
+    background-color: #FAF8F5;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: table;
+    width: 100%;
+    padding: 20px 8%;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+header .logo {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+header .logo h1 {
+    font-size: 24px;
+    color: #4A5D4E; /* Verde-musgo */
+}
+
+header .logo h1 span {
+    color: #8C6239; /* Marrom */
+}
+
+header nav {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+}
+
+header nav ul {
+    list-style: none;
+    display: inline-block;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #4A5D4E;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #8C6239; /* Transição para Marrom */
+}
+
+/* ==========================================================================
+   3. BANNER PRINCIPAL (HERO SECTION) E INTRODUÇÃO
+   ========================================================================== */
+.hero-banner {
+    padding: 120px 8% 80px 8%;
+    background: linear-gradient(rgba(250, 248, 245, 0.85), rgba(250, 248, 245, 0.95)), 
+                url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
     text-align: center;
-    color: var(--texto-claro);
-    padding: 20px;
 }
 
-.hero h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-    max-width: 800px;
+.banner-content h2 {
+    font-size: 42px;
+    color: #4A5D4E;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
 }
 
-.introducao {
-    background-color: var(--cor-fundo-claro);
-    text-align: center;
+.banner-content p {
+    font-size: 18px;
+    color: #8C6239;
+    font-weight: 600;
+    margin-bottom: 60px;
 }
 
-.introducao p {
-    font-size: 1.2rem;
+.introduction {
     max-width: 800px;
     margin: 0 auto;
+    background-color: #FFF;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(74, 93, 78, 0.05);
+    border-left: 5px solid #8C6239; /* Detalhe em Marrom */
+}
+
+.introduction h3 {
+    font-size: 22px;
+    color: #4A5D4E;
+    margin-bottom: 15px;
+}
+
+.introduction p {
+    font-size: 15px;
+    color: #555;
+    text-align: justify;
+}
+
+/* Separadores elegantes */
+hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #8C6239, transparent);
+    margin: 40px 0;
+    opacity: 0.2;
+}
+
+/* ==========================================================================
+   4. ESTRUTURA DAS SEÇÕES DE CONTEÚDO
+   ========================================================================== */
+.content-section {
+    padding: 80px 8%;
+}
+
+.content-section h2 {
+    font-size: 32px;
+    color: #4A5D4E;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.section-lead {
+    text-align: center;
+    color: #8C6239;
+    font-size: 16px;
+    margin-bottom: 50px;
+    font-weight: 600;
+}
+
+/* Layout em Tabela/Bloco simulando Grid (Compatível e Robusto) */
+.grid-container, .challenges-grid {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 25px 0;
+}
+
+.card, .challenge-box {
+    display: table-cell;
+    background: #FFF;
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+    vertical-align: top;
+    border-top: 4px solid #4A5D4E;
+}
+
+.card h3, .challenge-box h3 {
+    font-size: 20px;
+    color: #4A5D4E;
+    margin-bottom: 15px;
+}
+
+.card p, .challenge-box p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.card ul {
+    list-style-position: inside;
+}
+
+.card ul li {
+    font-size: 14px;
+    margin-bottom: 10px;
     color: #555;
 }
 
-/* ==========================================================================
-   3. SEÇÃO: CRESCIMENTO DO AGRONEGÓCIO & TECNOLOGIA
-   ========================================================================== */
-.agronegocio-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+/* Modificadores de seções específicas */
+.alert-section .challenge-box {
+    border-top-color: #8C6239; /* Desafios recebem marrom no topo */
 }
 
-.card-tech {
-    background: #FFFFFF;
-    border-top: 5px solid var(--cor-primaria);
+.features-list {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 25px 0;
+}
+
+.feature-item {
+    display: table-cell;
+    background: #4A5D4E;
+    color: #FAF8F5;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: var(--transicao);
+    vertical-align: top;
 }
 
-.card-tech:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+.feature-item h3 {
+    color: #FAF8F5;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(250, 248, 245, 0.2);
+    padding-bottom: 8px;
 }
 
-.card-tech h3 {
-    color: var(--cor-primaria);
-    margin-bottom: 15px;
+.feature-item p {
+    font-size: 14px;
+    color: rgba(250, 248, 245, 0.85);
 }
 
-/* ==========================================================================
-   4. SEÇÃO: SUSTENTABILIDADE (PRÁTICAS ECOLÓGICAS)
-   ========================================================================== */
-.sustentabilidade {
-    background-color: var(--cor-fundo-claro);
+/* Visão de Futuro */
+.solutions-container {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.sustentabilidade-grid {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 40px;
-    margin-top: 40px;
+.solutions-container article {
+    background: #FFF;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border-left: 4px solid #4A5D4E;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.01);
 }
 
-.sustentabilidade-conteudo, .sustentabilidade-imagem {
-    flex: 1;
-    min-width: 300px;
-}
-
-.lista-praticas {
-    list-style: none;
-}
-
-.lista-praticas li {
-    margin-bottom: 15px;
-    padding-left: 30px;
-    position: relative;
-    font-size: 1.1rem;
-}
-
-.lista-praticas li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--cor-primaria);
-    font-weight: bold;
-    font-size: 1.2rem;
+.solutions-container h3 {
+    color: #4A5D4E;
+    margin-bottom: 8px;
 }
 
 /* ==========================================================================
-   5. SEÇÃO: DESAFIOS AMBIENTAIS (ALERTA)
+   5. ÁREA INTERATIVA E CONTATO
    ========================================================================== */
-.desafios {
-    background-color: #FFF5F5; /* Tom levemente avermelhado para alerta */
+.interactive-grid {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 40px 0;
 }
 
-.desafios h2 {
-    color: #C62828; /* Vermelho escuro para o título de desafios */
+.interactive-tools, .contact-form-container {
+    display: table-cell;
+    vertical-align: top;
 }
 
-.desafios h2::after {
-    background-color: #C62828;
-}
-
-.desafios-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
-}
-
-.alerta-box {
-    background: #FFFFFF;
-    border-left: 5px solid #C62828;
+.tool-box {
+    background: #FFF;
     padding: 25px;
-    border-radius: 4px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    border: 1px solid rgba(140, 98, 57, 0.1);
 }
 
-/* ==========================================================================
-   6. SEÇÃO: SOLUÇÕES E FUTURO
-   ========================================================================== */
-.futuro-destaque {
-    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
-    color: var(--texto-claro);
-    border-radius: 12px;
-    padding: 50px;
-    text-align: center;
-    margin-top: 40px;
+.tool-box h3 {
+    font-size: 16px;
+    color: #8C6239;
+    margin-bottom: 5px;
 }
 
-.futuro-destaque h3 {
-    font-size: 2rem;
+.tool-box p {
+    font-size: 13px;
+    color: #777;
     margin-bottom: 15px;
 }
 
-/* ==========================================================================
-   7. SEÇÃO: CONTATO, CONSCIENTIZAÇÃO & INTERATIVIDADE
-   ========================================================================== */
-.contato-interativo {
-    background-color: var(--cor-fundo-claro);
+/* Botões Elaborados */
+button, button[type="submit"] {
+    background-color: #4A5D4E;
+    color: #FAF8F5;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.interativo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-    margin-top: 40px;
+button:hover, button[type="submit"]:hover {
+    background-color: #38463B;
+    transform: translateY(-1px);
 }
 
-/* Formulário */
-.formulario-contato {
-    background: #FFFFFF;
-    padding: 30px;
+/* Formulário de Contato */
+.contact-form-container {
+    background: #FFF;
+    padding: 40px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
 }
 
-.grupo-campo {
+.contact-form-container h3 {
+    color: #4A5D4E;
+    margin-bottom: 25px;
+    font-size: 22px;
+}
+
+.form-group {
     margin-bottom: 20px;
 }
 
-.grupo-campo label {
+.form-group label {
     display: block;
+    font-size: 14px;
+    font-weight: 600;
     margin-bottom: 8px;
-    font-weight: 600;
+    color: #4A5D4E;
 }
 
-.grupo-campo input, .grupo-campo textarea {
+.form-group input, .form-group textarea {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #CCC;
+    padding: 12px 15px;
+    border: 1px solid rgba(7A, 93, 78, 0.2);
+    background-color: #FAF8F5;
     border-radius: 4px;
-    font-family: var(--fonte-principal);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #2C3E2F;
+    transition: border-color 0.3s ease;
 }
 
-.grupo-campo input:focus, .grupo-campo textarea:focus {
-    border-color: var(--cor-primaria);
+.form-group input:focus, .form-group textarea:focus {
     outline: none;
+    border-color: #8C6239; /* Foco ganha cor Marrom */
 }
 
-/* Recursos Interativos (Quiz, Calculadora) */
-.recursos-interativos {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.contact-form-container button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+    background-color: #8C6239; /* Destaque do envio em marrom */
 }
 
-.box-interativo {
-    background: #FFFFFF;
-    padding: 25px;
-    border-radius: 8px;
-    border: 1px solid #E0E0E0;
+.contact-form-container button[type="submit"]:hover {
+    background-color: #6F4E2D;
 }
 
-/* Botões */
-.btn {
-    display: inline-block;
-    background-color: var(--cor-primaria);
-    color: var(--texto-claro);
-    padding: 12px 25px;
-    border: none;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transicao);
-    text-decoration: none;
+/* Mensagem de Impacto Final */
+.final-message {
+    max-width: 800px;
+    margin: 60px auto 0 auto;
     text-align: center;
 }
 
-.btn:hover {
-    background-color: var(--cor-secundaria);
-}
-
-.btn-alerta {
-    background-color: var(--cor-acento);
-}
-
-.btn-alerta:hover {
-    background-color: #E65100;
-}
-
-/* Galeria de Imagens */
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 15px;
-    margin-top: 15px;
-}
-
-.galeria img {
-    border-radius: 6px;
-    transition: var(--transicao);
-    cursor: pointer;
-}
-
-.galeria img:hover {
-    transform: scale(1.05);
+.final-message blockquote {
+    font-style: italic;
+    font-size: 18px;
+    color: #4A5D4E;
+    padding: 0 20px;
+    border-left: 3px solid #8C6239;
+    border-right: 3px solid #8C6239;
 }
 
 /* ==========================================================================
-   8. RODAPÉ (FOOTER)
+   6. RODAPÉ (FOOTER)
    ========================================================================== */
 footer {
-    background-color: var(--cor-fundo-escura);
-    color: #B0BEC5;
+    background-color: #2C3E2F; /* Fundo musgo bem escuro para fechamento */
+    color: #FAF8F5;
     text-align: center;
     padding: 30px 20px;
-    font-size: 0.9rem;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+footer p {
+    opacity: 0.8;
 }
 
 /* ==========================================================================
-   9. RESPONSIVIDADE (MEDIA QUERIES)
+   7. RESPONSIVIDADE (MOBILE FIRST SUTIL)
    ========================================================================== */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.2rem;
+    header, header nav {
+        display: block;
+        text-align: center;
     }
-    
-    h2 {
-        font-size: 2rem;
+    header nav ul li {
+        margin: 10px 15px 0 15px;
     }
-    
-    .container {
-        padding: 40px 15px;
+    .grid-container, .challenges-grid, .features-list, .interactive-grid {
+        display: block;
+        border-spacing: 0;
     }
-    
-    .futuro-destaque {
-        padding: 30px 20px;
+    .card, .challenge-box, .feature-item, .interactive-tools, .contact-form-container {
+        display: block;
+        width: 100%;
+        margin-bottom: 25px;
+    }
+    .banner-content h2 {
+        font-size: 28px;
     }
 }
