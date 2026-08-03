@@ -1,197 +1,526 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroSustentável - Produzir hoje preservando o amanhã</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+AMANDA CAROLINE SOARES DE ARAUJO <amanda.soares.araujo@escola.pr.gov.br>
+	
+qua., 29 de jul., 12:01 (há 5 dias)
+	
+	
+para amandasoares9595
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E TIPOGRAFIA
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
 
-    <header>
-        <div class="logo">
-            <h1>Agro<span>Sustentável</span></h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="#crescimento">Crescimento</a></li>
-                <li><a href="#sustentabilidade">Sustentabilidade</a></li>
-                <li><a href="#desafios">Desafios</a></li>
-                <li><a href="#futuro">Futuro</a></li>
-                <li><a href="#contato">Contato & Interação</a></li>
-            </ul>
-        </nav>
-    </header>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <main>
-        <section id="home" class="hero-banner">
-            <div class="banner-content">
-                <h2>“Produzir hoje preservando o amanhã”</h2>
-                <p>Equilibrando a força da produção com o respeito à natureza.</p>
-            </div>
-            <div class="hero-image-container">
-                <img src="assets/agricultura_sustentavel_principal.jpg" alt="Agricultura Sustentável" class="responsive-img">
-            </div>
-            <div class="introduction">
-                <h3>O Motor da Economia e o Futuro do Planeta</h3>
-                <p>O agronegócio é um dos pilares mais importantes da economia global, garantindo o alimento na mesa de milhões de pessoas e movimentando o mercado. No entanto, o grande desafio da nossa era é alinhar essa capacidade produtiva à preservação ambiental, garantindo que os recursos naturais continuem disponíveis para as próximas gerações.</p>
-            </div>
-        </section>
+html {
+    scroll-behavior: smooth;
+}
 
-        <hr>
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #FAF8F5;
+    color: #2C3E2F;
+    line-height: 1.6;
+}
 
-        <section id="crescimento" class="content-section">
-            <h2>O Crescimento do Agronegócio</h2>
-            <p class="section-lead">A força econômica unida à transformação tecnológica no campo.</p>
-           
-            <div class="grid-container">
-                <article class="card">
-                    <h3>Impacto Econômico</h3>
-                    <p>Geração de empregos, exportações recordes e fortalecimento do PIB, alimentando o desenvolvimento de diversas regiões.</p>
-                </article>
-               
-                <article class="card">
-                    <h3>Tecnologia de Ponta</h3>
-                    <p>O campo se modernizou. A introdução de tecnologias inovadoras transforma o dia a dia do produtor rural.</p>
-                    <ul>
-                        <li><strong>Drones Agrícolas:</strong> Mapeamento preciso e monitoramento de pragas.</li>
-                        <li><strong>Agricultura de Precisão:</strong> Aplicação exata de insumos, evitando desperdícios.</li>
-                        <li><strong>Irrigação Inteligente:</strong> Sensores que controlam a umidade e usam a água na quantidade certa.</li>
-                    </ul>
-                </article>
-            </div>
-        </section>
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
 
-        <hr>
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #FAF8F5;
+}
+::-webkit-scrollbar-thumb {
+    background: #4A5D4E;
+    border-radius: 5px;
+}
 
-        <section id="sustentabilidade" class="content-section clean-energy">
-            <h2>Sustentabilidade no Campo</h2>
-            <p class="section-lead">Práticas ecológicas que mostram que a produção consciente já é uma realidade.</p>
-           
-            <div class="features-list">
-                <div class="feature-item">
-                    <h3>Conservação do Solo</h3>
-                    <p>Técnicas como o plantio direto e a rotação de culturas que evitam a erosão e mantêm a terra fértil naturalmente.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Economia de Água</h3>
-                    <p>Sistemas de captação da água da chuva e reaproveitamento nos processos agrícolas.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Energias Renováveis</h3>
-                    <p>O uso de painéis solares e biomassa para gerar energia limpa que abastece as fazendas e agroindústrias.</p>
-                </div>
-            </div>
-        </section>
+/* ==========================================================================
+   2. CABEÇALHO E NAVEGAÇÃO
+   ========================================================================== */
+header {
+    background-color: #FAF8F5;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: table;
+    width: 100%;
+    padding: 20px 8%;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
 
-        <hr>
+header .logo {
+    display: table-cell;
+    vertical-align: middle;
+}
 
-        <section id="desafios" class="content-section alert-section">
-            <h2>Desafios Ambientais</h2>
-            <p class="section-lead">As consequências da produção sem planejamento e a urgência de mudanças.</p>
-           
-            <div class="challenges-grid">
-                <div class="challenge-box">
-                    <h3>Desmatamento</h3>
-                    <p>A expansão agrícola desordenada destrói biomas ricos e ameaça a biodiversidade.</p>
-                </div>
-                <div class="challenge-box">
-                    <h3>Emissão de Carbono</h3>
-                    <p>Práticas inadequadas aceleram a liberação de gases de efeito estufa, agravando o aquecimento global.</p>
-                </div>
-                <div class="challenge-box">
-                    <h3>Desperdício de Água</h3>
-                    <p>A falta de manejo correto dos recursos hídricos pode secar fontes vitais e prejudicar ecossistemas inteiros.</p>
-                </div>
-            </div>
-        </section>
+header .logo h1 {
+    font-size: 24px;
+    color: #4A5D4E;
+}
 
-        <hr>
+header .logo h1 span {
+    color: #8C6239;
+}
 
-        <section id="futuro" class="content-section future-vision">
-            <h2>Soluções e o Futuro do Agro</h2>
-            <p class="section-lead">O caminho para o desenvolvimento sustentável passa pela inovação e regeneração.</p>
-           
-            <div class="solutions-container">
-                <article>
-                    <h3>Agricultura Regenerativa & Reflorestamento</h3>
-                    <p>Mais do que apenas preservar, o futuro exige recuperar. A agricultura regenerativa restaura a saúde do solo e os sistemas agroflorestais integram árvores nativas com a produção de alimentos.</p>
-                </article>
-                <article>
-                    <h3>Inovação Verde</h3>
-                    <p>Acelerar a transição para matrizes 100% limhas (solar, eólica e biocombustíveis) e investir em biotecnologia para diminuir a dependência de defensivos químicos.</p>
-                </article>
-            </div>
-        </section>
+header nav {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+}
 
-        <hr>
+header nav ul {
+    list-style: none;
+    display: inline-block;
+}
 
-        <section id="contato" class="content-section interactive-area">
-            <h2>Conscientização & Contato</h2>
-            <p class="section-lead">Participe da mudança. Teste seus conhecimentos e fale conosco.</p>
+header nav ul li {
+    display: inline-block;
+    margin-left: 30px;
+}
 
-            <div class="interactive-grid">
-                <div class="interactive-tools">
-                    <div class="tool-box" id="quiz">
-                        <h3>Quiz da Sustentabilidade</h3>
-                        <p>Descubra o quanto você sabe sobre as práticas ecológicas no campo.</p>
-                        <div id="quiz-container"></div>
-                        <button type="button" id="start-quiz-btn">Iniciar Quiz</button>
-                    </div>
+header nav ul li a {
+    text-decoration: none;
+    color: #4A5D4E;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
 
-                    <div class="tool-box" id="calculadora">
-                        <h3>Calculadora de Impacto Ambiental</h3>
-                        <p>Simule o consumo e entenda a pegada ecológica de diferentes métodos de produção.</p>
-                        <div id="calc-container"></div>
-                        <button type="button" id="start-calc-btn">Calcular Impacto</button>
-                    </div>
+header nav ul li a:hover {
+    color: #8C6239;
+}
 
-                    <div class="tool-box" id="galeria">
-                        <h3>Galeria Verde</h3>
-                        <p>Veja fotos inspiradoras de projetos reais de agricultura sustentável pelo Brasil.</p>
-                        <div class="gallery-thumbs-container">
-                            <img src="assets/galeria_sustentavel_thumb.jpg" alt="Inovação no Campo" class="thumb-trigger" data-full="assets/galeria_sustentavel.jpg">
-                        </div>
-                        <button type="button" id="open-gallery-btn">Ver Galeria</button>
-                    </div>
-                </div>
+/* ==========================================================================
+   3. BANNER PRINCIPAL (HERO SECTION) E INTRODUÇÃO
+   ========================================================================== */
+.hero-banner {
+    padding: 120px 8% 80px 8%;
+    background: #FAF8F5;
+    text-align: center;
+}
 
-                <div class="contact-form-container">
-                    <h3>Fale Conosco</h3>
-                    <form action="#" method="POST">
-                        <div class="form-group">
-                            <label for="nome">Nome:</label>
-                            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
-                        </div>
-                       
-                        <div class="form-group">
-                            <label for="email">E-mail:</label>
-                            <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required>
-                        </div>
-                       
-                        <div class="form-group">
-                            <label for="mensagem">Mensagem / Ideia:</label>
-                            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Como podemos ajudar ou colaborar para um agro mais sustentável?" required></textarea>
-                        </div>
-                       
-                        <button type="submit">Enviar Mensagem</button>
-                    </form>
-                </div>
-            </div>
+.banner-content h2 {
+    font-size: 42px;
+    color: #4A5D4E;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
 
-            <div class="final-message">
-                <blockquote>
-                    <p>"A Terra provê o suficiente para satisfazer as necessidades de todos os homens, mas não a ganância de todos." – Mahatma Gandhi. Faça sua parte pela sustentabilidade.</p>
-                </blockquote>
-            </div>
-        </section>
-    </main>
+.banner-content p {
+    font-size: 18px;
+    color: #8C6239;
+    font-weight: 600;
+    margin-bottom: 60px;
+}
 
-    <footer>
-        <p>&copy; 2026 AgroSustentável. Todos os direitos reservados. Produzindo com consciência.</p>
-    </footer>
+.hero-image-container {
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+    border: 5px solid #FFF;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(74, 93, 78, 0.12);
+    overflow: hidden;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+.responsive-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.hero-image-container:hover .responsive-img {
+    transform: scale(1.02);
+}
+
+.introduction {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #FFF;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(74, 93, 78, 0.05);
+    border-left: 5px solid #8C6239;
+}
+
+.introduction h3 {
+    font-size: 22px;
+    color: #4A5D4E;
+    margin-bottom: 15px;
+}
+
+.introduction p {
+    font-size: 15px;
+    color: #555;
+    text-align: justify;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #8C6239, transparent);
+    margin: 40px 0;
+    opacity: 0.2;
+}
+
+/* ==========================================================================
+   4. ESTRUTURA DAS SEÇÕES DE CONTEÚDO
+   ========================================================================== */
+.content-section {
+    padding: 80px 8%;
+}
+
+.content-section h2 {
+    font-size: 32px;
+    color: #4A5D4E;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.section-lead {
+    text-align: center;
+    color: #8C6239;
+    font-size: 16px;
+    margin-bottom: 50px;
+    font-weight: 600;
+}
+
+.grid-container, .challenges-grid {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 25px 0;
+}
+
+.card, .challenge-box {
+    display: table-cell;
+    background: #FFF;
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+    vertical-align: top;
+    border-top: 4px solid #4A5D4E;
+}
+
+.card h3, .challenge-box h3 {
+    font-size: 20px;
+    color: #4A5D4E;
+    margin-bottom: 15px;
+}
+
+.card p, .challenge-box p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.card ul {
+    list-style-position: inside;
+}
+
+.card ul li {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.alert-section .challenge-box {
+    border-top-color: #8C6239;
+}
+
+.features-list {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 25px 0;
+}
+
+.feature-item {
+    display: table-cell;
+    background: #4A5D4E;
+    color: #FAF8F5;
+    padding: 30px;
+    border-radius: 8px;
+    vertical-align: top;
+}
+
+.feature-item h3 {
+    color: #FAF8F5;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(250, 248, 245, 0.2);
+    padding-bottom: 8px;
+}
+
+.feature-item p {
+    font-size: 14px;
+    color: rgba(250, 248, 245, 0.85);
+}
+
+.solutions-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.solutions-container article {
+    background: #FFF;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border-left: 4px solid #4A5D4E;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.01);
+}
+
+.solutions-container h3 {
+    color: #4A5D4E;
+    margin-bottom: 8px;
+}
+
+/* ==========================================================================
+   5. ÁREA INTERATIVA E CONTATO
+   ========================================================================== */
+.interactive-grid {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 40px 0;
+}
+
+.interactive-tools, .contact-form-container {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.tool-box {
+    background: #FFF;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    border: 1px solid rgba(140, 98, 57, 0.1);
+}
+
+.tool-box h3 {
+    font-size: 16px;
+    color: #8C6239;
+    margin-bottom: 5px;
+}
+
+.tool-box p {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* Estilização Dinâmica dos Elementos de Quiz e Calculadora */
+.interactive-component {
+    margin: 15px 0;
+    padding: 15px;
+    background: #FAF8F5;
+    border-radius: 6px;
+    border-left: 3px solid #4A5D4E;
+    text-align: left;
+    animation: zoomEffect 0.3s ease;
+}
+
+.interactive-component label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.interactive-component select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(7A, 93, 78, 0.3);
+    font-family: 'Open Sans', sans-serif;
+    background: #FFF;
+}
+
+.quiz-option {
+    display: block;
+    margin: 8px 0;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.quiz-option input {
+    margin-right: 8px;
+}
+
+.result-box {
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #8C6239;
+}
+
+.gallery-thumbs-container {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.thumb-trigger {
+    width: 100%;
+    max-width: 180px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.thumb-trigger:hover {
+    border-color: #8C6239;
+    transform: scale(1.04);
+}
+
+.modal-image-view {
+    max-width: 100%;
+    max-height: 65vh;
+    border-radius: 8px;
+    border: 4px solid #FAF8F5;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    margin-bottom: 20px;
+    animation: zoomEffect 0.3s ease;
+}
+
+@keyframes zoomEffect {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+button, button[type="submit"] {
+    background-color: #4A5D4E;
+    color: #FAF8F5;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover, button[type="submit"]:hover {
+    background-color: #38463B;
+    transform: translateY(-1px);
+}
+
+.contact-form-container {
+    background: #FFF;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.contact-form-container h3 {
+    color: #4A5D4E;
+    margin-bottom: 25px;
+    font-size: 22px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #4A5D4E;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid rgba(7A, 93, 78, 0.2);
+    background-color: #FAF8F5;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #2C3E2F;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #8C6239;
+}
+
+.contact-form-container button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+    background-color: #8C6239;
+}
+
+.contact-form-container button[type="submit"]:hover {
+    background-color: #6F4E2D;
+}
+
+.final-message {
+    max-width: 800px;
+    margin: 60px auto 0 auto;
+    text-align: center;
+}
+
+.final-message blockquote {
+    font-style: italic;
+    font-size: 18px;
+    color: #4A5D4E;
+    padding: 0 20px;
+    border-left: 3px solid #8C6239;
+    border-right: 3px solid #8C6239;
+}
+
+footer {
+    background-color: #2C3E2F;
+    color: #FAF8F5;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+footer p {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    header, header nav {
+        display: block;
+        text-align: center;
+    }
+    header nav ul li {
+        margin: 10px 15px 0 15px;
+    }
+    .grid-container, .challenges-grid, .features-list, .interactive-grid {
+        display: block;
+        border-spacing: 0;
+    }
+    .card, .challenge-box, .feature-item, .interactive-tools, .contact-form-container {
+        display: block;
+        width: 100%;
+        margin-bottom: 25px;
+    }
+    .banner-content h2 {
+        font-size: 28px;
+    }
+}
