@@ -1,10 +1,15 @@
-}/* ==========================================================================
+AMANDA CAROLINE SOARES DE ARAUJO <amanda.soares.araujo@escola.pr.gov.br>
+	
+qua., 29 de jul., 12:02 (há 5 dias)
+	
+	
+para amandasoares9595
+/* ==========================================================================
    AGROSUSTENTÁVEL - INTELIGÊNCIA E ANIMAÇÕES DA PÁGINA
    ========================================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
     initScrollAnimations();
-    initHeroParallax();
     initFormValidation();
     initInteractiveTools();
 });
@@ -37,24 +42,17 @@ function initScrollAnimations() {
 }
 
 /* ==========================================================================
-   2. EFEITO PARALLAX SUAVE NO BANNER PRINCIPAL (DESATIVADO PARA A IMAGEM NO CONTEÚDO)
-   ========================================================================== */
-function initHeroParallax() {
-    // Parallax mantido estruturalmente caso queira adicionar dinamicidade à seção futuramente
-}
-
-/* ==========================================================================
-   3. VALIDAÇÃO E ANIMAÇÃO DO FORMULÁRIO DE CONTATO
+   2. VALIDAÇÃO E ANIMAÇÃO DO FORMULÁRIO DE CONTATO
    ========================================================================== */
 function initFormValidation() {
     const form = document.querySelector('.contact-form-container form');
-    
+   
     if (form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             const nome = document.getElementById('nome').value.trim();
             const email = document.getElementById('email').value.trim();
-            
+           
             if (nome === "" || email === "") {
                 alert("Por favor, preencha todos os campos obrigatórios.");
                 return;
@@ -62,7 +60,7 @@ function initFormValidation() {
 
             const button = form.querySelector('button[type="submit"]');
             const originalText = button.textContent;
-            
+           
             button.disabled = true;
             button.textContent = "Enviando... 🌾";
             button.style.backgroundColor = "#4A5D4E";
@@ -71,7 +69,7 @@ function initFormValidation() {
                 button.textContent = "Mensagem Enviada com Sucesso!";
                 button.style.backgroundColor = "#2C3E2F";
                 form.reset();
-                
+               
                 setTimeout(() => {
                     button.disabled = false;
                     button.textContent = originalText;
@@ -83,39 +81,96 @@ function initFormValidation() {
 }
 
 /* ==========================================================================
-   4. FERRAMENTAS INTERATIVAS (QUIZ, CALCULADORA E GALERIA ADAPTADA COM IMAGENS LOCAIS)
+   3. FERRAMENTAS INTERATIVAS (QUIZ, CALCULADORA INTEGRADOS E GALERIA LOCAL)
    ========================================================================== */
 function initInteractiveTools() {
-    // --- LÓGICA DO QUIZ ---
-    const quizBtn = document.querySelector('#quiz button');
-    if (quizBtn) {
-        quizBtn.addEventListener('click', () => {
-            const resposta = confirm("Pergunta do Quiz:\nA agricultura de precisão ajuda a economizar água e insumos no campo?\n\n[OK] para Sim\n[Cancelar] para Não");
-            if (resposta) {
-                alert("Correto! A tecnologia permite aplicar a quantidade exata necessária, evitando desperdícios. 🌱");
-            } else {
-                alert("Incorreto. A agricultura de precisão é uma das maiores aliadas da economia de recursos!");
-            }
+   
+    // --- LÓGICA DO QUIZ DINÂMICO ---
+    const startQuizBtn = document.getElementById('start-quiz-btn');
+    const quizContainer = document.getElementById('quiz-container');
+
+    if (startQuizBtn && quizContainer) {
+        startQuizBtn.addEventListener('click', () => {
+            startQuizBtn.style.display = 'none';
+            quizContainer.innerHTML = `
+                <div class="interactive-component">
+                    <p style="font-size: 14px; margin-bottom: 10px; font-weight: 600;">Qual das seguintes opções é uma prática de agricultura regenerativa?</p>
+                    <label class="quiz-option"><input type="radio" name="quiz-q" value="incorrect1"> Uso intensivo de defensivos químicos</label>
+                    <label class="quiz-option"><input type="radio" name="quiz-q" value="correct"> Rotação de culturas e plantio direto</label>
+                    <label class="quiz-option"><input type="radio" name="quiz-q" value="incorrect2"> Desmatamento planejado</label>
+                    <button type="button" id="submit-quiz-btn" style="margin-top: 10px; padding: 6px 15px;">Responder</button>
+                    <div id="quiz-result" class="result-box"></div>
+                </div>
+            `;
+
+            document.getElementById('submit-quiz-btn').addEventListener('click', () => {
+                const selected = document.querySelector('input[name="quiz-q"]:checked');
+                const resultDiv = document.getElementById('quiz-result');
+                if (!selected) {
+                    resultDiv.textContent = "Por favor, selecione uma resposta.";
+                    return;
+                }
+                if (selected.value === 'correct') {
+                    resultDiv.innerHTML = "Correto! 🌱 A rotação de culturas restaura os nutrientes do solo naturalmente.";
+                    resultDiv.style.color = "#4A5D4E";
+                } else {
+                    resultDiv.innerHTML = "Incorreto. Tente novamente! Práticas sustentáveis recuperam a terra.";
+                    resultDiv.style.color = "#8C6239";
+                }
+            });
         });
     }
 
-    // --- LÓGICA DA CALCULADORA DE IMPACTO ---
-    const calcBtn = document.querySelector('#calculadora button');
-    if (calcBtn) {
-        calcBtn.addEventListener('click', () => {
-            const irrigacaoInteligente = confirm("Sua propriedade utiliza sensores de irrigação inteligente?\n\n[OK] para Sim\n[Cancelar] para Não");
-            if (irrigacaoInteligente) {
-                alert("Parabéns! Sua pegada hídrica é otimizada. Você economiza em média até 40% de água comparado ao método tradicional. 💧");
-            } else {
-                alert("Atenção: Métodos tradicionais podem gerar desperdício. Considere migrar para gotejamento ou sensores inteligentes para proteger o lençol freático.");
-            }
+    // --- LÓGICA DA CALCULADORA DE IMPACTO DINÂMICA ---
+    const startCalcBtn = document.getElementById('start-calc-btn');
+    const calcContainer = document.getElementById('calc-container');
+
+    if (startCalcBtn && calcContainer) {
+        startCalcBtn.addEventListener('click', () => {
+            startCalcBtn.style.display = 'none';
+            calcContainer.innerHTML = `
+                <div class="interactive-component">
+                    <div style="margin-bottom: 10px;">
+                        <label for="calc-agua">Manejo de Irrigação:</label>
+                        <select id="calc-agua">
+                            <option value="tradicional">Tradicional (Por Aspersão Comum)</option>
+                            <option value="inteligente">Inteligente (Sensores / Gotejamento)</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <label for="calc-energia">Matriz de Energia utilizada:</label>
+                        <select id="calc-energia">
+                            <option value="rede">Rede Elétrica Comum / Diesel</option>
+                            <option value="limpa">Solar / Biomassa / Renovável</option>
+                        </select>
+                    </div>
+                    <button type="button" id="submit-calc-btn" style="padding: 6px 15px;">Analisar Impacto</button>
+                    <div id="calc-result" class="result-box" style="margin-top: 15px; font-weight: normal; color: #2C3E2F;"></div>
+                </div>
+            `;
+
+            document.getElementById('submit-calc-btn').addEventListener('click', () => {
+                const agua = document.getElementById('calc-agua').value;
+                const energia = document.getElementById('calc-energia').value;
+                const resultDiv = document.getElementById('calc-result');
+
+                let mensagemAgua = agua === 'inteligente'
+                    ? "✓ Seu manejo hídrico economiza até 40% de água. Excelente!"
+                    : "✗ O sistema tradicional consome excessivamente. Considere sensores.";
+               
+                let mensagemEnergia = energia === 'limpa'
+                    ? "✓ Sua pegada de carbono é reduzida devido ao uso de energias renováveis."
+                    : "✗ Alto impacto em emissões de carbono. A transição solar seria vantajosa.";
+
+                resultDiv.innerHTML = `<p>${mensagemAgua}</p><p style="margin-top: 5px;">${mensagemEnergia}</p>`;
+            });
         });
     }
 
-    // --- LÓGICA DO MODAL DA GALERIA (ABRE IMAGENS DA PASTA ASSETS) ---
+    // --- LÓGICA DO MODAL DA GALERIA ---
     const openImageModal = (imageSource, descriptionText) => {
         const overlay = document.createElement('div');
-        
+       
         Object.assign(overlay.style, {
             position: 'fixed',
             top: '0',
@@ -150,7 +205,6 @@ function initInteractiveTools() {
         });
     };
 
-    // Abre ao clicar no botão geral da galeria
     const mainGalleryBtn = document.querySelector('#open-gallery-btn');
     if (mainGalleryBtn) {
         mainGalleryBtn.addEventListener('click', () => {
@@ -158,7 +212,6 @@ function initInteractiveTools() {
         });
     }
 
-    // Abre ao clicar diretamente na miniatura
     const thumbImg = document.querySelector('.thumb-trigger');
     if (thumbImg) {
         thumbImg.addEventListener('click', () => {
@@ -168,4 +221,3 @@ function initInteractiveTools() {
         });
     }
 }
-
